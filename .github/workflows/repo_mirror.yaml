@@ -58,6 +58,8 @@ jobs:
           git add map_files
           git add headers
           git add manifest.json
+          git add report.txt
+          git add updated_at.txt
           if (git status --porcelain | wc -l | grep 0 > /dev/null);then echo "No changes to commit";else git commit -m "Repo updates within last 3 hours";fi
 
       - name: Push changes
