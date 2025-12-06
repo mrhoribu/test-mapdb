@@ -232,11 +232,6 @@ download_mapdb = proc { |xmldata|
           end
         end
         begin
-          require_relative('mapdiff_report')
-        rescue => e
-          puts e.inspect
-        end
-        begin
           File.rename(ungzipname, tempfilename)
         rescue StandardError
           if $ERROR_INFO.to_s =~ /Invalid cross-device link/
