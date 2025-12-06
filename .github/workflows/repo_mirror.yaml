@@ -46,6 +46,7 @@ jobs:
           wget --tries=5 --retry-connrefused --retry-on-host-error https://github.com/elanthia-online/jinxp/releases/download/v0.4.0/jinxp \
           && chmod +x jinxp \
           && ./jinxp -i map_files
+          ls -lha
 
       - name: Commit changes
         continue-on-error: true
