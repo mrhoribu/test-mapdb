@@ -1,0 +1,16 @@
+diffing old /home/runner/work/test-mapdb/test-mapdb/map_files/mapdb.json to new /tmp/temp_map.repo
+--------------------------------------------------
+22462 [Irregulars Barracks, Courtyard] Wehnimer's Landing (u18005001)
+    added tags:   ["juniper berry", "dark blue honeyberries", "plump black mulberries", "brown potato", "purple potato", "agave heart", "round grumbleberry", "birch bark", "ghost pepper", "hot pepper", "off-white parsnip", "meta:forage-sensed:day:2025-12"]
+--------------------------------------------------
+old map max: 36011
+current map max: 36011
+old map size: 36012
+current map size: 36012
+1 rooms with changes found.
+0 new rooms
+0 deleted rooms
+0 room titles no longer found
+0 room descriptions no longer found
+1 new tags: ["meta:forage-sensed:day:2025-12"]
+0 tags gone: []
