@@ -40,12 +40,20 @@ jobs:
         run: bundle exec ruby lichless_repo.rb
         timeout-minutes: 2
 
+      - name: Update JINX manifest
+        continue-on-error: true
+        run: |
+          wget --tries=5 --retry-connrefused --retry-on-host-error https://github.com/elanthia-online/jinxp/releases/download/v0.4.0/jinxp \
+          && chmod +x jinxp \
+          && ./jinxp -i map_files
+
       - name: Commit changes
         continue-on-error: true
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add map_files
+          git add manifest.json
           if (git status --porcelain | wc -l | grep 0 > /dev/null);then echo "No changes to commit";else git commit -m "Repo updates within last 3 hours";fi
 
       - name: Push changes
@@ -53,3 +61,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
+          
