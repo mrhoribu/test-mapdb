@@ -6,7 +6,7 @@ on:
         description: 'Force checkout of map to HASH version'
         required: false
   schedule:
-    - cron: '23 */3 * * *'
+    - cron: '25 */3 * * *'
   push:
     branches:
     - main
