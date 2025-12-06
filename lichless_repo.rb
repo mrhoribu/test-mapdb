@@ -294,7 +294,6 @@ download_mapdb = proc { |xmldata|
     map_json_images.delete(nil)
     existing_maps = Dir["#{map_images_dir}/*"].map { |f| f.split("/").last }
     image_filenames = map_json_images - existing_maps
-    image_filenames = []
     unless image_filenames.empty?
       echo 'downloading missing map images...'
       begin
