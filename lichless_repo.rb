@@ -73,7 +73,7 @@ map_data_dir = "#{work_dir}/map_files"
 map_images_dir = "#{work_dir}/map_files"
 map_file = File.join(map_data_dir, 'mapdb.json')
 
-map_updated_at_file = File.join(map_data_dir, 'updated_at')
+map_updated_at_file = File.join(work_dir, 'updated_at.txt')
 
 echoput = proc { |msg|
   echo msg
@@ -230,6 +230,11 @@ download_mapdb = proc { |xmldata|
             end
             data = nil
           end
+        end
+        begin
+          require_relative('mapdiff_report')
+        rescue => e
+          puts e.inspect
         end
         begin
           File.rename(ungzipname, tempfilename)
