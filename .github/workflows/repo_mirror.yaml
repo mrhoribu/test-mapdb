@@ -1,0 +1,52 @@
+name: Run repo mirror
+on:
+  workflow_dispatch:
+    inputs:
+      mapDBCommitHash:
+        description: 'Force checkout of map to HASH version'
+        required: false
+  schedule:
+    - cron: '42 */3 * * *'
+  push:
+    branches:
+    - main
+
+jobs:
+  mirror:
+    if: "!contains(github.event.head_commit.message, 'Repo updates within last')"
+    runs-on: ubuntu-22.04
+    timeout-minutes: 3
+    steps:
+      - name: Checkout configuration
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Rollback mapDB for testing
+        run: git checkout ${{ github.event.inputs.mapDBCommitHash }} -- map_files/mapdb.json
+        if: "${{ github.event.inputs.mapDBCommitHash != '' }}"
+
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: run mirror script
+        run: bundle exec ruby lichless_repo/lichless_repo.rb
+        timeout-minutes: 2
+
+      - name: Commit changes
+        continue-on-error: true
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add map_files
+          if (git status --porcelain | wc -l | grep 0 > /dev/null);then echo "No changes to commit";else git commit -m "Repo updates within last 3 hours";fi
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
