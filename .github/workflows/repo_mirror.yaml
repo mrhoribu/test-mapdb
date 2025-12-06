@@ -47,7 +47,7 @@ jobs:
           && chmod +x jinxp \
           && ./jinxp -i map_files
           ls -lha
-          ls map_files -lha
+          ls dist -lha
 
       - name: Commit changes
         continue-on-error: true
