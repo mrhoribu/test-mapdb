@@ -1,53 +1,14 @@
 diffing old /home/runner/work/test-mapdb/test-mapdb/map_files/mapdb.json to new /tmp/temp_map.repo
 --------------------------------------------------
-33209 [Transference Dahcre Chamber] Ta'Vaalor (u14109112)
-  old wayto['33210'] =    "pull statue"
-  new wayto['33210'] =    "pull ivory statues"
-    added tags:   ["meta:che:rone_academy:entrance_annex"]
+25149 [Sea of Fire, Desert] the shadow of the Sanctum (u-4216147)
+    added uid:   [-4216142]
 --------------------------------------------------
-33210 [Darkened Chamber] Ta'Vaalor (u14109212)
-  added wayto:
-    36091: [Private Locker] => "go curtained opening"
-  old wayto['33209'] =    "pull ring"
-  new wayto['33209'] =    "pull mithglin ring"
-  added timeto:
-    36091: [Private Locker] => 0.2
-    added tags:   ["meta:che:rone_academy:entrance_locker"]
---------------------------------------------------
-33211 [The Reading Lounge] the Lost Home (u13112113)
-  old wayto['33212'] =    "pull sconce"
-  new wayto['33212'] =    "pull candle sconce"
-    added tags:   ["meta:che:rone_academy:entrance_annex"]
---------------------------------------------------
-33212 [A Stone Chamber] the Lost Home (u13112213)
-  added wayto:
-    36090: [Lounge Lockers] => "go curtained opening"
-  added timeto:
-    36090: [Lounge Lockers] => 0.2
-    added tags:   ["meta:che:rone_academy:entrance_locker"]
---------------------------------------------------
-33215 [House Annex, Rone Academy] Kraken's Fall (u7121240)
-  added wayto:
-    36092: [Annex, Booth] => "go dark curtain"
-  added timeto:
-    36092: [Annex, Booth] => 0.2
-    added tags:   ["meta:che:rone_academy:entrance_locker", "meta:che:rone_academy:entrance_annex"]
---------------------------------------------------
-36090 [Lounge Lockers] -- new room
-{"id"=>36090, "title"=>["[Lounge Lockers]"], "description"=>["Warm light filters through the curtained opening, faintly illuminating the simple cell."], "paths"=>["Obvious exits: none"], "location"=>"the Lost Home", "wayto"=>{"33212"=>"go curtained opening"}, "timeto"=>{"33212"=>0.2}, "tags"=>["meta:che:rone_academy:locker"], "uid"=>[13112313]}
---------------------------------------------------
-36091 [Private Locker] -- new room
-{"id"=>36091, "title"=>["[Private Locker]"], "description"=>["Jade green marble veined with cream covers the small amount of floor space, while pale oak paneling forms a modest wainscoting.  A white-on-cream figured silk covers the upper portion of the walls."], "paths"=>["Obvious exits: none"], "location"=>"Ta'Vaalor", "wayto"=>{"33210"=>"go curtain"}, "timeto"=>{"33210"=>0.2}, "tags"=>["meta:che:rone_academy:locker"], "uid"=>[14109312]}
---------------------------------------------------
-36092 [Annex, Booth] -- new room
-{"id"=>36092, "title"=>["[Annex, Booth]"], "description"=>["Ivory drapes hang upon the walls, their overly long lower edges pooling upon the soft rug that stretches from wall to wall.  The drape's silken lengths are unfettered except where they are parted to provide egress through a silver-edged dark purple curtain.  A lacquered haon counter sits in the center of the circular chamber, beneath the light of an enormous seaglass orb that is held aloft by a woven hemp basket."], "paths"=>["Obvious exits: none"], "location"=>"Kraken's Fall", "wayto"=>{"33215"=>"go dark curtain"}, "timeto"=>{"33215"=>0.2}, "tags"=>["meta:che:rone_academy:locker"], "uid"=>[7121241]}
---------------------------------------------------
-old map max: 36089
+old map max: 36092
 current map max: 36092
-old map size: 36090
+old map size: 36093
 current map size: 36093
-5 rooms with changes found.
-3 new rooms
+1 rooms with changes found.
+0 new rooms
 0 deleted rooms
 0 room titles no longer found
 0 room descriptions no longer found
